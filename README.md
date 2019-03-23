@@ -1,5 +1,5 @@
 # incognitobook
-Open all external Facebook links in an Incognito window.
+Browser extension to open all external Facebook links in an Incognito window.
 
 TODO:
 * Make it work in Firefox
