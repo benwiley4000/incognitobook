@@ -1,0 +1,36 @@
+{
+  "name": "Incognitobook",
+  "version": "1.0",
+  "description": "Open all external Facebook links in an Incognito window.",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": ["activeTab", "tabs", "storage"],
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "incognitobook_16.png",
+      "32": "incognitobook_32.png",
+      "48": "incognitobook_48.png",
+      "128": "incognitobook_128.png"
+    }
+  },
+  "icons": {
+    "16": "incognitobook_16.png",
+    "32": "incognitobook_32.png",
+    "48": "incognitobook_48.png",
+    "128": "incognitobook_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.facebook.com/*",
+        "*://facebook.com/*"
+      ],
+      "run_at": "document_start",
+      "js": ["listen_for_clicks.js"]
+    }
+  ],
+  "manifest_version": 2
+}
